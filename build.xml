@@ -1,12 +1,11 @@
 <project name="Simple FSM" default="package" basedir=".">
 
 	<property name="dir.classes" value="./build/classes" />
-	<property name="dir.deploy" value="./deploy" />
+	<property name="dir.deploy" value="." />
 
 	<target name="prepare">
 		<mkdir dir="./build" />
 		<mkdir dir="${dir.classes}" />
-		<mkdir dir="${dir.deploy}" />
 	</target>
 
 	<target name="build" depends="prepare" description="Builds all binaries">
