@@ -8,4 +8,5 @@ in a hashmap - this is: They mus implement equals() and hashCode() meaningful.
 Enums are suggested types for states and events as long as no custom logic is needed. 
 The user can register listeners to fire custom actins whenever the automata changes its state. 
 
-The implementation is really easy to use - look at the tests (DefaultAutomataFactoryTest.java) for a "howto". 
+The implementation is really easy to use - look at the tests (DefaultFsmTest and DefaultAutomataFactoryTest.java) 
+for a "howto". 
