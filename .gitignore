@@ -1,3 +1,6 @@
+/deploy/*
+/build/*
+
 *.class
 
 # Package Files #

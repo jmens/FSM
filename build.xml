@@ -1,0 +1,23 @@
+<project name="Simple FSM" default="package" basedir=".">
+
+	<property name="dir.classes" value="./build/classes" />
+	<property name="dir.deploy" value="./deploy" />
+
+	<target name="prepare">
+		<mkdir dir="./build" />
+		<mkdir dir="${dir.classes}" />
+		<mkdir dir="${dir.deploy}" />
+	</target>
+
+	<target name="build" depends="prepare" description="Builds all binaries">
+		<javac srcdir="./src/java" destdir="${dir.classes}">
+				<include name="**/*.java" />
+		</javac>
+	</target>
+	
+	<target name="package" description="Builds a ready-to-use jar">
+		<jar basedir="${dir.classes}" destfile="${dir.deploy}/simplefsm.jar" /> 
+		<echo>Successfully built ${dir.deploy}/simplefsm.jar</echo>
+	</target>
+
+</project>
