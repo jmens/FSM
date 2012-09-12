@@ -1,5 +1,5 @@
-/deploy/*
-/build/*
+/project/deploy/*
+/project/build/*
 
 *.class
 
