@@ -14,7 +14,7 @@
 		</javac>
 	</target>
 	
-	<target name="package" description="Builds a ready-to-use jar">
+	<target name="package" depends="build" description="Builds a ready-to-use jar">
 		<jar basedir="${dir.classes}" destfile="${dir.deploy}/simplefsm.jar" /> 
 		<echo>Successfully built ${dir.deploy}/simplefsm.jar</echo>
 	</target>
