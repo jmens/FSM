@@ -252,4 +252,32 @@ public class DefaultFsmTest {
 		validEvents = fsm.getValidEvents(S4);
 		Assert.assertTrue(validEvents.isEmpty()); 		
 	}
+	
+	@Test 
+	public void getValidStatesShouldDeliverCorrectValues() {
+		fsm.addTransistion(S1, S2, E1);
+		fsm.addTransistion(S1, S4, E3);
+		fsm.addTransistion(S2, S3, E2);
+		fsm.addTransistion(S2, S4, E3);
+		fsm.addTransistion(S3, S1, E1);
+		
+		Set<StateDef> validEvents;
+		
+		validEvents = fsm.getValidStates(S1);
+		Assert.assertEquals(2, validEvents.size()); 
+		Assert.assertTrue(validEvents.contains(S2));
+		Assert.assertTrue(validEvents.contains(S4)); 
+		
+		validEvents = fsm.getValidStates(S2);
+		Assert.assertEquals(2, validEvents.size()); 
+		Assert.assertTrue(validEvents.contains(S3));
+		Assert.assertTrue(validEvents.contains(S4)); 
+		
+		validEvents = fsm.getValidStates(S3);
+		Assert.assertEquals(1, validEvents.size()); 
+		Assert.assertTrue(validEvents.contains(S1));
+		
+		validEvents = fsm.getValidStates(S4);
+		Assert.assertTrue(validEvents.isEmpty()); 		
+	}
 }

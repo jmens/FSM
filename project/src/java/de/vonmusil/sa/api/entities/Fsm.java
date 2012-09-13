@@ -23,4 +23,6 @@ public interface Fsm<S, E> {
 	void setFsmListener(FsmListener<S, E> listener);
 
 	void removeFsmListener(FsmListener<S, E> listener);
+
+	Set<S> getValidStates(S state);
 }
